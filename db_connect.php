@@ -6,7 +6,12 @@
 //error_reporting(E_ALL);
 
 // Create connection to the MySQL database
-$conn = mysqli_connect("localhost", "nagendra", "nagendra", "payroll_management");
+$host = $_ENV['AZURE_MYSQL_HOST'] ?? "localhost";
+$username = $_ENV['AZURE_MYSQL_USERNAME'] ?? "nagendra" ?? "root";
+$password = $_ENV['AZURE_MYSQL_PASSWORD'] ?? "nagendra";
+$db_name = $_ENV['AZURE_MYSQL_DBNAME'] ?? "payroll_management";
+// $conn = mysqli_connect("localhost", "nagendra", "nagendra", "payroll_management");
+$conn = mysqli_connect($host, $username, $password, $db_name);
 
 // Check connection
 if ($conn === false) {
