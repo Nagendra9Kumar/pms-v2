@@ -7,7 +7,7 @@
 
 // Create connection to the MySQL database
 $host = $_ENV['AZURE_MYSQL_HOST'] ?? "localhost";
-$username = $_ENV['AZURE_MYSQL_USERNAME']+"@payroll-server" ?? "root";
+$username = $_ENV['AZURE_MYSQL_USERNAME']."@payroll-server" ?? "root";
 $password = $_ENV['AZURE_MYSQL_PASSWORD'] ?? "nagendra";
 $db_name = $_ENV['AZURE_MYSQL_DBNAME'] ?? "payroll_management";
 // $conn = mysqli_connect("localhost", "nagendra", "nagendra", "payroll_management");
